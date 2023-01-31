@@ -4,9 +4,7 @@ import com.curso.quarkus.dtos.UserDTO;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,8 +12,12 @@ import javax.persistence.Table;
 @Setter
 @Entity
 @Builder
-@Table(name = "user_costumer")
-public class User extends PanacheEntity {
+@Table(name = "tb_user")
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @Column(name = "name")
     private String name;
     @Column(name = "email")
