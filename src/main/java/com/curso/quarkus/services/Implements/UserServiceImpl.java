@@ -43,7 +43,8 @@ public class UserServiceImpl implements UserService {
         try {
             entity.persist();
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+//            throw new RuntimeException(e);
         }
 
         return toDto(entity);

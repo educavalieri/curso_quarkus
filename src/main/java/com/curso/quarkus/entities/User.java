@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Setter
 @Entity
 @Builder
-@Table(name = "user_costumer")
+@Table(name = "tb_user")
 public class User extends PanacheEntity {
     @Column(name = "name")
     private String name;

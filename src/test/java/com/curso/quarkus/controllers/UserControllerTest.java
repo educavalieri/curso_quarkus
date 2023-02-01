@@ -22,6 +22,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @QuarkusTest
 class UserControllerTest {
 
+    private static final String JSON_ENTRY = "{\"name\": \"name\", \"email\": \"name@email\"}";
+
     UserDTO userDTO = UserDTO
             .builder()
             .name("name")
@@ -86,7 +88,7 @@ class UserControllerTest {
         var response =
         given()
                 .contentType(ContentType.JSON)
-                .body("{\"name\": \"name\", \"email\": \"name@email\"}")
+                .body(JSON_ENTRY)
                 .when()
                 .post(apiURL)
                 .then()
